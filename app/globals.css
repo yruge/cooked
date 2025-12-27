@@ -1,26 +1,152 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-switzer: 'Switzer', sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-switzer);
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  padding: 52px 24px;
+  background-color: white;
+  min-height: 45vh;
+}
+
+.hero-layout-1 {
+  min-height: 90vh;
+  /* background-color: #ecedec; */
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-intro {
+  grid-column: 1/5;
+}
+
+.hero-layout h1 {
+  font-size: 9vw;
+}
+
+.hero-intro-1 {
+  grid-column: 9/12;
+}
+
+.hero-intro-1 h2 {
+  font-size: 1.75rem;
+  /* Approx 48px */
+  font-weight: 600;
+  /* SemiBold - noticeable but lighter than the title */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.hero-intro-1 p {
+  font-size: 1rem;
+  /* Approx 18px - readable size */
+  text-align: justify;
+  font-weight: 400;
+  /* Regular */
+  line-height: 1.5;
+  /* Standard readable line height */
+  color: #555;
+  /* Slightly lighter than black for hierarchy */
+  margin-bottom: 2rem;
+  max-width: 90%;
+  /* Stops the line from getting too long to read */
+}
+
+.hero-intro-1 button {
+  font-family: var(--font-dm-sans);
+  font-size: 1rem;
+  /* 16px */
+  font-weight: 500;
+  /* Medium */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 2rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1536px;
+  /* border: 1px solid black;
+  border-left: none;
+  border-right: none; */
+  margin: 0 auto;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%,  rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+}
+
+.scrolling-text {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: scroll 30s linear infinite;
+}
+
+.scrolling-text-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scrolling-text h1 {
+  font-family: var(--font-dm-sans);
+  font-size: 2vw;
+  /* white-space: nowrap; */
+  letter-spacing: 3px;
+  opacity: 0.7;
+}
+
+.scrolling-text span {
+  font-size: 2vw;
+  opacity: 0.7;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-layout-1 img {
+  border-radius: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: transform 0.3s ease;
+  animation: float 6s ease-in-out infinite;
+  position: absolute;
+}
+
+.hero-image img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  z-index: 10; /* Bring to front on hover */ 
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
