@@ -198,6 +198,12 @@ body {
 
 @media (max-width: 640px) {
   .hero-layout-1 {
-    gap: 80px;
+    gap: 90px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-layout-1{
+    gap: 90px;
   }
 }
