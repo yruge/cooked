@@ -19,20 +19,22 @@ body {
   padding: 52px 24px;
   background-color: white;
   min-height: 45vh;
+  height: auto;
 }
 
 .hero-layout-1 {
-  max-height: 65vh;
-  height: 100%;
+  /* min-height: 65vh; */
+  /* height: fit-content; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap:20px;
+  gap:60px;
   background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
   background-size: 40px 40px;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hero-intro {
@@ -152,21 +154,18 @@ body {
   100% { transform: translateY(0px); }
 }
 
-@media (max-width: 1028px) {
-  .tyler-creator {
-    left:50px !important;
-  }
-
-  .tame-impala {
-    left: 30px !important;
-  }
-
-  .drake-2 {
-    left: 40px !important;
+@media (max-width: 1024px) {
+  .hero-layout-1 {
+    gap: 80px;
   }
 
   .snoop-dogg {
-    left: 20px !important;
+    bottom: 10px !important;
+    left: 50px !important;
+  }
+
+  .drake-pooped {
+    left: 0px !important;
   }
 }
 
@@ -175,29 +174,30 @@ body {
     display: block;
   }
 
-  .hero-layout h1 {
-    padding-bottom: 20px;
-  }
-
-  .tyler-creator, .tame-impala, .snoop-dogg, .drake-pooped, .drake-pregnant {
-    max-width: 150px !important;
-  }
-
-  .tame-impala {
-    left: 30px !important;
+  .hero-layout-1 {
+    gap: 105px;
   }
 
   .drake-2 {
-    left: 40px !important;
-  }
-
-  .drake-pooped {
-    left: 0px !important;
-    right: 80px !important;
-    top: 0px !important;
+    left: 20px !important;
   }
 
   .snoop-dogg {
+    bottom: 40px !important;
     left: 20px !important;
+  }
+
+  .drake-pooped {
+    left: -50px !important;
+  }
+
+  .hero-layout h1 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-layout-1 {
+    gap: 80px;
   }
 }

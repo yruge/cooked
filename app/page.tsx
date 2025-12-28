@@ -32,11 +32,11 @@ export default function Home() {
 
       <div className="hero-layout-1">
         <img src="/images/nigor.jpg" alt="Tyler The Creator Funny Album" className="tyler-creator" style={{maxWidth: '235px', height:"auto", left:'20px', top:'20px'}}/>
-        <img src="/images/drake-pregnant.jpg" alt="Drake Funny Album 1" className="drake-pregnant" style={{maxWidth:'200px', height:"auto", top:'50px'}} />
+        <img src="/images/drake-pregnant.jpg" alt="Drake Funny Album 1" className="drake-pregnant" style={{maxWidth:'200px', height:"auto", top:'20px'}} />
         <img src="/images/tame-impala.jpg" alt="Tame Impala Funny Album" className='tame-impala' style={{maxWidth:'242px', height:"auto", top:'50px', right:'50px'}}/>
         <img src="/images/drake-funny-album.jpg" alt="Drake Funny Album 2" className='drake-2' style={{maxWidth:'280px', height:"auto", left:'100px'}}/>
-        <img src="/images/snoop-dogg.jpg" alt="Snoop Dogg Funny Picture" className="snoop-dogg" style={{maxWidth:'276px', height:"auto", top:'40px', left:'100px'}}/>
-        <img src="/images/drake-pooped.jpg" alt="Drake Funny Album 3" className="drake-pooped" style={{maxWidth:'279px', height:"auto", left:'30px', top:'50px'}}/>
+        <img src="/images/snoop-dogg.jpg" alt="Snoop Dogg Funny Picture" className="snoop-dogg" style={{maxWidth:'276px', height:"auto", bottom:'20px',left:'80px'}}/>
+        <img src="/images/drake-pooped.jpg" alt="Drake Funny Album 3" className="drake-pooped" style={{maxWidth:'250px', height:"auto", left:'30px'}}/>
       </div>
     </main>
   );
