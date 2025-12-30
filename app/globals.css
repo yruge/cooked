@@ -54,7 +54,6 @@ body {
   font-size: clamp(1rem, 0.8rem + 1.2vw, 2rem);
   /* Approx 48px */
   font-weight: 600;
-  /* SemiBold - noticeable but lighter than the title */
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom:   1rem;
@@ -76,7 +75,6 @@ body {
   font-size: clamp(0.75rem, 0.7rem + 0.25vw, 1rem);
   /* 16px */
   font-weight: 500;
-  /* Medium */
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: clamp(0.75rem, 0.7rem + 0.25vw, 1rem) clamp(1rem, 0.8rem + 1vw, 2rem);
@@ -84,14 +82,23 @@ body {
   color: #fff;
   border: none;
   cursor: pointer;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .spotify-logo {
+    margin-right: 15px;
+  }
+
+  .hero-intro-1 button:hover {
+    transition: transform 0.2s ease-in;
+     transform: scale(1.1);
+  }
 
 .wrapper {
   width: 100%;
   max-width: 1536px;
-  /* border: 1px solid black;
-  border-left: none;
-  border-right: none; */
   margin: 0 auto;
   overflow: hidden;
   mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%,  rgba(0,0,0,1) 80%, rgba(0,0,0,0));
@@ -137,15 +144,44 @@ body {
 .hero-layout-1 img {
   border-radius: 12px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: transform 0.3s ease;
-  animation: float 6s ease-in-out infinite;
+  animation: disappear-pop 8s ease-in-out infinite;
+  transition: transform 0.3s ease, filter 0.3s ease;
   position: relative;
   width: 100%;
 }
 
 .hero-image, img:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-  z-index: 10; /* Bring to front on hover */ 
+  animation-play-state: paused;
+  transform: scale(1.1) rotate(0deg) !important; 
+  z-index: 50;
+  filter: blur(0px);
+  opacity: 1;
+}
+
+.drake-2 {
+  object-fit: cover;
+}
+
+@keyframes disappear-pop {
+  0%, 85% {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0px);
+  }
+  90% {
+    opacity: 0;
+    scale: 0.8;
+    filter: blur(10px); /* Smoky vanish */
+  }
+  95% {
+    opacity: 0;
+    scale: 0.8;
+  }
+  100% {
+    opacity: 1;
+    scale: 1.05; /* Slight "Pop" bigger on return */
+    filter: blur(0px);
+  }
 }
 
 @keyframes float {
