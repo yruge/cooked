@@ -1,5 +1,3 @@
-"use client"
-
 import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
@@ -37,9 +35,9 @@ export default async function ProfilePage() {
                         <Image
                             src={session.user.image}
                             alt="Profile Image"
-                            width={50}
-                            height={50}
-                            className="w-[50px] h-[50px] rounded-full object-cover"
+                            width={100}
+                            height={100}
+                            className="rounded-full object-cover w-[40px] h-[40px] md:w-[40px] md:h-[40px] lg:w-[50px] lg:h-[50px]"
                         />
                     ) : (
                         /* Optional: Render a fallback div or icon if no image */
@@ -47,8 +45,7 @@ export default async function ProfilePage() {
                     )}
                         <h1>{session?.user?.name}'s recently played songs</h1>
                     </div>
-                    {/* CHECK: Only render if image exists AND is not empty */}
-                    <RoastMeButton/>
+                    <RoastMeButton songs={song} className={styles.roastMe}/>
                 </div>
 
                 {/* <div style={{ background: '#333', color: '#0f0', padding: '20px', marginTop: '50px', borderRadius: '10px' }}>
@@ -62,7 +59,7 @@ export default async function ProfilePage() {
                     {song && song.map((item: any, index: number) =>
                         <div key={index} className={styles.songContainer}>
                             {item.track.album.images && item.track.album.images[2] ? (
-                                <Image src={item.track.album.images[2].url} alt="Album Image" width={64} height={64} objectFit="contain" />
+                                <Image src={item.track.album.images[2].url} alt="Album Image" width={64} height={64}/>
                             ) : (<div style={{ width: 30, height: 30, background: '#ccc' }} />)}
                             <div className={styles.songInfo}>
                                 <h1 className={styles.songName}>{item.track.name}</h1>
