@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from 'next/font/google';
 import "./globals.css";
 import localFont from 'next/font/local';
+import { AuthOptions } from "./providers";
 
 const switzer = localFont({
   src: './fonts/Switzer-Variable.woff2',
@@ -32,7 +33,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${switzer.variable} ${dmSans.variable}`}>
-        {children}
+          <AuthOptions>
+             {children}
+          </AuthOptions> 
       </body>
     </html>
   );

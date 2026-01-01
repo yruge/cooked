@@ -1,7 +1,6 @@
 'use client'
-import { signIn } from 'next-auth/react';
+import { signIn, signOut } from 'next-auth/react';
 import { redirect } from 'next/navigation';
-import './globals.css'
 
 export default function Home() {
   return (
@@ -11,7 +10,8 @@ export default function Home() {
         <div className="hero-intro-1">
           <h2>AI Powered Judgement</h2>
           <p>Your Spotify Wrapped was a lie. Let our AI analyze your listening history and tell you the harsh truth about who you really are.</p>
-          <button onClick={() => signIn("spotify", {callbackUrl: 'http://127.0.0.1:3000/profile'})}><img src="/images/spotify-logo-removebg-preview.png" className="spotify-logo"width="40px" height="59px"/>Roast Me</button>
+          <button onClick={() => signIn("spotify", {callbackUrl: "/profile"})}><img src="/images/spotify-logo-removebg-preview.png" className="spotify-logo"width="40px" height="59px"/>Roast Me</button>
+          {/* <button onClick={() =>signOut()}>Sign out</button> */}
         </div>
       </div>
 

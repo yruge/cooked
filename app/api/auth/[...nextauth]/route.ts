@@ -1,5 +1,6 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
+
 
 declare module "next-auth" {
     interface Session {
@@ -12,8 +13,7 @@ declare module "next-auth/jwt" {
         accessToken?: string;
     }
 }
-
-export const authOptions = NextAuth({
+export const authOptions: NextAuthOptions = {
     providers: [
         SpotifyProvider({
             clientId: process.env.SPOTIFY_CLIENT_ID!,
@@ -33,16 +33,14 @@ export const authOptions = NextAuth({
             return session
         },
         async redirect({ url, baseUrl }) {
-            // Allows relative callback URLs
             if (url.startsWith("/")) return `${baseUrl}${url}`
-            // Allows callback URLs on the same origin
             else if (new URL(url).origin === baseUrl) return url
             return baseUrl
         },
     },
     debug: true,
-})
+}
 
-const handler = authOptions
+const handler = NextAuth(authOptions)
 
 export { handler as GET, handler as POST }

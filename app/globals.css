@@ -85,6 +85,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
   }
 
   .spotify-logo {
@@ -92,7 +93,7 @@ body {
   }
 
   .hero-intro-1 button:hover {
-    transition: transform 0.2s ease-in;
+    transition: transform 0.2 s ease-in;
      transform: scale(1.1);
   }
 
