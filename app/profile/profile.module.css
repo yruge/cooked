@@ -2,38 +2,51 @@
 .profileContainer {
     position: relative;
 }
-.profileContainer .signOut {
+
+.signOut {
     position: absolute;
-    background-color: black;
-    color: #ffff;
-    margin: 20px 20px;
-    padding: 10px 20px;
-    right: 0;
+    /* Keep it in the corner if you like */
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    /* No background */
+    color: #666;
+    /* Grey text */
+    border: 1px solid #ddd;
+    /* Subtle border */
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
 }
 
-.profileContainer .signOut :hover {
-    filter: brightness(1.5);
+.signOut:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
 }
 
 .profilePage {
-  max-width: 100%;
-  width: 500px;
-  margin: 0 auto;
-  padding: 100px 0px;
+    max-width: 100%;
+    width: 500px;
+    margin: 0 auto;
+    padding: 100px 0px;
 }
 
 .profile h1 {
-  font-family: var(--font-dm-switzer);
-  font-size: 1.5rem;
-  font-weight: 800;
+    font-family: var(--font-dm-switzer);
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
 .profile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .profileContent {
@@ -43,19 +56,26 @@
 
 
 .profile button {
-    background-color: black;
-    color: #ffff;
-    padding: 10px;
+    background: linear-gradient(45deg, #FF416C, #FF4B2B);
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
 }
 
 .profile button:hover {
-    transform: transition 0.1s ease-in;
-    transition: scale(1.1);
+    transform: scale(1.05);
+    /* Grow slightly */
+    filter: brightness(1.1);
 }
 
 .profile img {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 /* .profileSongs {

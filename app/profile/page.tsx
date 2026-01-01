@@ -5,7 +5,8 @@ import { redirect } from "next/navigation"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import styles from "./profile.module.css"
 import Image from "next/image"
-import { signOut } from 'next-auth/react';
+import SignOutButton from './SignOutButton';
+import RoastMeButton from "./RoastMeButton"
 
 async function getRecentlyPlayed(session: any) {
     if (!session) redirect("/")
@@ -28,7 +29,7 @@ export default async function ProfilePage() {
 
     return (
         <div className={styles.profileContainer}>
-            <button onClick={() => signOut()} className={styles.signOut}>Sign out</button>
+            <SignOutButton/>
             <div className={styles.profilePage}>
                 <div className={styles.profile}>
                     <div className={styles.profileContent}>
@@ -47,7 +48,7 @@ export default async function ProfilePage() {
                         <h1>{session?.user?.name}'s recently played songs</h1>
                     </div>
                     {/* CHECK: Only render if image exists AND is not empty */}
-                    <button>Roast me</button>
+                    <RoastMeButton/>
                 </div>
 
                 {/* <div style={{ background: '#333', color: '#0f0', padding: '20px', marginTop: '50px', borderRadius: '10px' }}>
