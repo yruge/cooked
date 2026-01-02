@@ -2,7 +2,8 @@
 Cooked, AI Integration that roasts user's based on their spotify listening history 
 
 # 💻 Demo
-https://github.com/user-attachments/assets/
+https://github.com/user-attachments/assets/85077cc0-3112-46f0-bb08-721e72b7bdeb
+
 <table>
   <tr>
     <td width="50%">
