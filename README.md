@@ -6,10 +6,10 @@ https://github.com/user-attachments/assets/
 <table>
   <tr>
     <td width="50%">
-      <img src="" width="100%" alt="Image 1" />
+      <img width="100%" alt="Home Page" src="https://github.com/user-attachments/assets/78e7b311-8abd-4cab-9411-ac0e70a393db" />
     </td>
     <td width="50%">
-      <img src="#" width="100%" alt="Image 2" />
+      <img width="100%" alt="Roasting Page" src="https://github.com/user-attachments/assets/f396da10-ef1b-4379-9dfa-ddfd581a878f" />
     </td>
   </tr>
 </table>
