@@ -23,6 +23,7 @@ https://github.com/user-attachments/assets/85077cc0-3112-46f0-bb08-721e72b7bdeb
 
 # 🛠️ Tech Stack & Architecture
 - **Framework** – Next.js
+- **Language:** TypeScript
 - **Frontend** – React, Tailwind CSS, CSS Modules 
 - **Backend** – Server actions
 - **API** - Spotify Web API & Gemini API
