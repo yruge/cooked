@@ -19,6 +19,7 @@ https://github.com/user-attachments/assets/85077cc0-3112-46f0-bb08-721e72b7bdeb
 - 🔐 Server-Side Security: Next.js Server Actions ensure API keys (OpenAI & Spotify) never leak to the client.
 - 🔥 AI-Powered Roasts: Generates unique, context-aware insults based on the user's actual listening history.
 - 🎧 Spotify Integration (OAuth 2.0): Full authentication flow allowing users to securely "Log in with Spotify" to fetch their recently played tracks.
+- ⚡ Optimized Performance: Implements automatic lazy loading for Spotify album covers using next/image, ensuring fast Largest Contentful Paint (LCP) scores and reduced bandwidth usage.
 - ⚡ Reactive UI/UX: Real-time "Cooking" states and error handling (e.g., if the AI is speechless).
 
 # 🛠️ Tech Stack & Architecture
